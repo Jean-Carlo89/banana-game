@@ -17,12 +17,11 @@ export default class Game{
       }
 
     start(){
-      console.log('aqui')
-      
+     
       this.canvas.width=350
       this.canvas.height=500
      
-      this.player = new Player(this.canvas.width/2,420,this.context)
+      this.player = new Player(this.canvas.width/2,380,this.context)
       this.drawLine()
       this.player.drawPlayer()
 
@@ -41,8 +40,9 @@ export default class Game{
       this.context.beginPath();
       this.context.moveTo(25, 450);
       this.context.lineTo(325, 450);
-      this.context.strokeStyle = "white";
+     this.context.strokeStyle = "white";
       this.context.stroke();
+     
     }
     clearScreen(){
          this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -50,14 +50,14 @@ export default class Game{
 
     movePlayer(e:KeyboardEvent){
      
-      if(e.key === "ArrowRight" && this.player.x+5<=300) {
+      if(e.key === "ArrowRight" && this.player.x+5<=325) {
     
         this.player.moveTo(5)
         
         console.log('direita')
       } 
 
-      if(e.key !== "ArrowRight" && this.player.x-5>-5){
+      if(e.key !== "ArrowRight" && this.player.x-5>20){
           this.player.moveTo(-5)
           
           console.log('esquerda')
